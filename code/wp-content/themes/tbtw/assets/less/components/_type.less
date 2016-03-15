@@ -39,7 +39,7 @@ h5, .h5 { font-size: @font-size-sm-h5; }
 h6, .h6 { font-size: @font-size-sm-h6; }
 p { 
   font-size: @font-size-small;
-  line-height: @line-height-base-sm;
+  line-height: @line-height-sm;
 }
 
 @media(min-width: @screen-sm) {
@@ -55,6 +55,13 @@ p {
   }
 }
 
+body {
+  line-height: @line-height-sm;
+  @media(min-width: @screen-sm) {
+    line-height: @line-height;
+  }
+}
+
 .container {
     
     h2 {
@@ -67,8 +74,12 @@ p {
     }
     
     p {
-      font-weight: 300;
+      font-weight: 500;
       font-family: @font-family-sans-serif-light;
+      line-height: @line-height;
+      @media(min-width: @screen-sm) {
+        font-family: @font-family-sans-serif;
+      }
     }
     
 }

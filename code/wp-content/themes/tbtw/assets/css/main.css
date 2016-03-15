@@ -6820,6 +6820,14 @@ p {
     font-size: 1.42857143;
   }
 }
+body {
+  line-height: 22px;
+}
+@media (min-width: 768px) {
+  body {
+    line-height: 24px;
+  }
+}
 .container h2 {
   margin-bottom: 20px;
 }
@@ -6828,8 +6836,14 @@ p {
   font-family: "Open Sans Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .container p {
-  font-weight: 300;
+  font-weight: 500;
   font-family: "Open Sans Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 24px;
+}
+@media (min-width: 768px) {
+  .container p {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
 }
 .hero-container {
   height: auto;
