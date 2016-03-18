@@ -53,7 +53,10 @@
             "cp -R wp/* .",
             "rm -Rf wp",
 
-            "mkdir -p wp-content/uploads && chmod -R 777 wp-content/uploads"
+            "find . -type d -exec chmod 755 {} \\;",
+            "find . -type f -exec chmod 644 {} \\;"
+            "mkdir -p wp-content/uploads && chmod -R 777 wp-content/uploads",
+            "chmod 777 wp-content/plugins"
         ]
     }
 }
