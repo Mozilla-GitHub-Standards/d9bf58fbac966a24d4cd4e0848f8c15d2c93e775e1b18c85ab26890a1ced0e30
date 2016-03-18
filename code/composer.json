@@ -8,11 +8,11 @@
         "WordPress/WordPress": "*",
         "wpackagist-plugin/advanced-custom-fields": "4.4.5",
         "wpackagist-plugin/advanced-custom-fields-field-snitch": "*",
-        "wpackagist-plugin/debug-bar": "0.8.2",
+        "wpackagist-plugin/debug-bar": "0.8.4",
         "wpackagist-plugin/debug-bar-timber": "0.3",
-        "wpackagist-plugin/timber-library": "0.22.4",
-        "wpackagist-plugin/wordpress-seo": "3.0.7",
-        "wpackagist-plugin/wp-super-cache": "1.4.7",
+        "wpackagist-plugin/timber-library": "0.22.5",
+        "wpackagist-plugin/wordpress-seo": "3.1.1",
+        "wpackagist-plugin/wp-super-cache": "1.4.8",
         "roots/soil": "3.0.3"
     },
     "repositories": [
@@ -53,8 +53,7 @@
             "cp -R wp/* .",
             "rm -Rf wp",
 
-            "mkdir -p wp-content/uploads && chmod -R 777 wp-content/uploads",
-            "mkdir -p wp-content/themes/tbtw/acf-json && chmod -R 777 wp-content/themes/tbtw/acf-json"
+            "mkdir -p wp-content/uploads && chmod -R 777 wp-content/uploads"
         ]
     }
 }
