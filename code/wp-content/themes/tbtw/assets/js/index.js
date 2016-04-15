@@ -1,9 +1,13 @@
 /**  
  * index.js
- * main Js file
+ * main Js file for: Take Back The Web
  **/
 
 window.tbtw = window.tbtw || {};
+
+/*
+ * library: Responsive Aware
+ */
 
 tbtw.respond = {
   
@@ -42,45 +46,8 @@ tbtw.respond = {
   
 };
 
-tbtw.resizeHero = {
-  
-  heroResize: ($('.hero-resize')),
-  defaultHeroHeight: 850,
-  mobileHeight: 450,
-  sectionOffset: 3,
-  
-  init: function() {
-    
-    $(window).resize(function(e) { tbtw.resizeHero.setHero(); });
-    $(window).scroll(function(e) { tbtw.resizeHero.setHero(); });
-    setTimeout(function() {
-      tbtw.resizeHero.setHero();
-    }, 0);
-  },
-  
-  setHero: function() {
-    var h = 380;
-    if(tbtw.mobile) {
-      tbtw.resizeHero.heroResize.css({'height': '', 'min-height': ''});
-    } else {
-      h = $(window).height() - tbtw.resizeHero.sectionOffset;
-      if(h <= tbtw.resizeHero.mobileHeight) {
-        tbtw.resizeHero.heroResize.css({'height': (tbtw.resizeHero.mobileHeight+'px'), 'min-height': (tbtw.resizeHero.mobileHeight+'px')});
-      } else if(h >= tbtw.resizeHero.defaultHeroHeight) {
-        tbtw.resizeHero.heroResize.css({'height': (tbtw.resizeHero.defaultHeroHeight+'px'), 'min-height': (tbtw.resizeHero.defaultHeroHeight+'px')});
-      } else {
-        tbtw.resizeHero.heroResize.css({'height': (h+'px'), 'min-height': (h+'px')});
-      }
-    }
-  }
-  
-};
-
-
-
-
 /*  
- * SCROLL TO ANCHOR
+ * library: SCROLL TO ANCHOR
  */
 
 tbtw.scrollToAnchor = {
@@ -121,6 +88,42 @@ tbtw.scrollToAnchor = {
   }
 
 };
+
+// Hero resize
+
+tbtw.resizeHero = {
+  
+  heroResize: ($('.hero-resize')),
+  defaultHeroHeight: 850,
+  mobileHeight: 450,
+  sectionOffset: 3,
+  
+  init: function() {
+    
+    $(window).resize(function(e) { tbtw.resizeHero.setHero(); });
+    $(window).scroll(function(e) { tbtw.resizeHero.setHero(); });
+    setTimeout(function() {
+      tbtw.resizeHero.setHero();
+    }, 0);
+  },
+  
+  setHero: function() {
+    var h = 380;
+    if(tbtw.mobile) {
+      tbtw.resizeHero.heroResize.css({'height': '', 'min-height': ''});
+    } else {
+      h = $(window).height() - tbtw.resizeHero.sectionOffset;
+      if(h <= tbtw.resizeHero.mobileHeight) {
+        tbtw.resizeHero.heroResize.css({'height': (tbtw.resizeHero.mobileHeight+'px'), 'min-height': (tbtw.resizeHero.mobileHeight+'px')});
+      } else if(h >= tbtw.resizeHero.defaultHeroHeight) {
+        tbtw.resizeHero.heroResize.css({'height': (tbtw.resizeHero.defaultHeroHeight+'px'), 'min-height': (tbtw.resizeHero.defaultHeroHeight+'px')});
+      } else {
+        tbtw.resizeHero.heroResize.css({'height': (h+'px'), 'min-height': (h+'px')});
+      }
+    }
+  }
+};
+
 
 
 // init on document ready

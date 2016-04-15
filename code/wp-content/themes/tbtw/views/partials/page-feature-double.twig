@@ -1,0 +1,18 @@
+    {% if post.page_feature_double_left !="" and post.page_feature_double_right !="" %}
+    <div class="page-feature-wrap">
+      <div class="container">
+        <div class="row page-feature-double">
+        {% if post.page_feature_double_left !="" %}
+          <div class="col-sm-6 col-left container-padding-all">
+            {{ post.page_feature_double_left|wpautop }}
+          </div>
+        {% endif %}
+        {% if post.page_feature_double_right !="" %}
+          <div class="col-sm-6 col-right container-padding-all">
+            {{ post.page_feature_double_right|wpautop }}
+          </div>
+        {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endif %}

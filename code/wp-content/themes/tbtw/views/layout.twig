@@ -1,7 +1,6 @@
-{%  
-  set fb_app_id = '' %}{% 
-  set ga_id = 'UA-111111-1' %}{% 
-  set gtm_id = '' %}
+{% set fb_app_id = gv.fb_app_id %}
+{% set ga_id = gv.ga_id %}
+{% set gtm_id = gv.gtm_id %}
 <!doctype html>
 <!--[if IE 8 ]>
 <html lang="en" class="no-js oldie ie8">
@@ -13,7 +12,7 @@
     <head>
         <meta charset="UTF-8">
         <!--
-           Made with ♥ 
+           Handcrafted at 270
         -->
         <title>{{ "wp_title"|function("-") }}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -75,7 +74,7 @@
             {% block foot %}{% endblock %}
 
             {% if environment == "development" %}
-                <script src="{{ assets_dir }}/vendor/jquery/jquery.min.js"></script>
+                <script src="{{ theme_dir }}/vendor/jquery/jquery.min.js"></script>
                 <script src="{{ assets_dir }}/js/scripts.js"></script>
             {% else %}
                 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

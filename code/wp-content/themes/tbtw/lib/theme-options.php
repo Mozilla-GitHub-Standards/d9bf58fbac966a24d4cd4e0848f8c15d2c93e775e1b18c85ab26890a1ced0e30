@@ -39,6 +39,44 @@
             'settings'  => 'footer_terms_url',
         )));
 
+        //
+        // Site Config
+        //
+
+        $wp_customize->add_section( 'site', array(
+            'title'     =>  'Site',
+            'priority'  =>  20
+        ));
+
+        // Fields
+
+        $wp_customize->add_setting( 'fb_app_id', array(
+            'default' => ''
+        ));
+        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fb_app_id', array(
+            'label'     => 'Facebook App Id',
+            'section'   => 'site',
+            'settings'  => 'fb_app_id',
+        )));
+
+        $wp_customize->add_setting( 'ga_id', array(
+            'default' => ''
+        ));
+        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ga_id', array(
+            'label'     => 'Google Analytics ID',
+            'section'   => 'site',
+            'settings'  => 'ga_id',
+        )));
+
+        $wp_customize->add_setting( 'gtm_id', array(
+            'default' => ''
+        ));
+        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'gtm_id', array(
+            'label'     => 'Google Tag Manager Id',
+            'section'   => 'site',
+            'settings'  => 'gtm_id',
+        )));
+
 
     }
 

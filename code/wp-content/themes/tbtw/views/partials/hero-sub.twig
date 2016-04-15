@@ -1,0 +1,19 @@
+{% if post.get_thumbnail %}
+    {% set page_hero = post.get_thumbnail.get_src|resize(1500) %}
+{% elseif post_parent %}
+    {% set page_hero = post_parent.get_thumbnail.get_src|resize(1500) %}
+{% endif %}
+
+    <div class="hero-container">
+        <div class="hero bg-img hero-sub"{% if page_hero %} style="background-image: url('{{ page_hero }}')"{% endif %}>
+            <div class="hero-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-10 col-sm-offset-1  col-md-8 col-md-offset-2">
+                          <h1 class="hero-title">{% if title %}{{ title }}{% else %}{{ post.title }}{% endif %}</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

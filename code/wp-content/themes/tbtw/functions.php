@@ -2,11 +2,16 @@
     //
     // Include Setup files
     //
+    include_once("lib/theme-custom-controls/textarea-custom-control.php");
+    include_once("lib/theme-options.php");
+    
     include_once("lib/setup/admin-menu.php");
     
-    include_once("lib/setup/fields/home.php");
-    include_once("lib/setup/fields/apply.php");
+    include_once("lib/setup/types/roles.php");
     
+    include_once("lib/setup/fields/role.php");
+    include_once("lib/setup/fields/apply.php");
+    include_once("lib/setup/fields/page.php");
     //
     // Globals
     //
@@ -20,6 +25,9 @@
     add_theme_support('post-thumbnails');
     add_theme_support('menus');
     
+    
+    remove_filter('the_content', 'wpautop');
+    remove_filter('acf_the_content', 'wpautop');
     
     //
     // Add Menus to Timber
@@ -54,7 +62,8 @@
         }
 
         $theme = get_stylesheet_directory_uri();
-
+        $data["theme_dir"] = $theme;
+        
         if ( $data["environment"] == "production" ) {
             $data["assets_dir"] = $theme . '/assets';
             $data["img_dir"]    = $theme . '/assets/img';

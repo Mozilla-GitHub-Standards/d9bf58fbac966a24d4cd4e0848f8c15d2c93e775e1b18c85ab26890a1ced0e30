@@ -4,30 +4,11 @@
 
     {% include "partials/hero-main.twig" %}
 
-    <section class="feature-main">
-        <div class="container container-padding">
-            <div class="row">
-                <div class="col-sm-4">
-                    <span class='img-wrap'><img src="{{ TimberImage( post.feature_1_image ).get_src }}" alt="{{ post.feature_1_headline }}"></span>
-                    <h4>{{ post.feature_1_headline }}</h4>
-                    {{ post.feature_1_message|wpautop }}
-                </div>
-                <div class="col-sm-4">
-                    <span class='img-wrap'><img src="{{ TimberImage( post.feature_2_image ).get_src }}" alt="{{ post.feature_2_headline }}"></span>
-                    <h4>{{ post.feature_2_headline }}</h4>
-                    {{ post.feature_2_message|wpautop }}
-                </div>
-                <div class="col-sm-4">
-                    <span class='img-wrap'><img src="{{ TimberImage( post.feature_3_image ).get_src }}" alt="{{ post.feature_3_headline }}"></span>
-                    <h4>{{ post.feature_3_headline }}</h4>
-                    {{ post.feature_3_message|wpautop }}
-                </div>
-            </div>
-        </div>
-    </section>
-    
+    {% include "partials/feature-roles.twig" %}
+
     {% include "partials/feature-apply-campus.twig" %}
-    
     {% include "partials/feature-apply-local.twig" %}
-    
+
+    {% include "partials/post-list.twig" %}
+
 {% endblock %}

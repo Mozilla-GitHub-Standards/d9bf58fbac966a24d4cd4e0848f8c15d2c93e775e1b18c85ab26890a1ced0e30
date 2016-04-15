@@ -1,0 +1,15 @@
+    <section class="feature-main" id="roles">
+        <div class="container container-padding">
+            <div class="row">
+              {% for role in roles %}
+                <div class="col-sm-4">
+                    <a href="{{ role.permalink }}">
+                      <span class='img-wrap'><img src="{{ TimberImage( role.role_image ).get_src }}" alt="{{ role.title }}"></span>
+                      <h4>{{ role.title }}</h4>
+                    </a>
+                    {{ role.role_summary|wpautop }}
+                </div>
+              {% endfor %}
+            </div>
+        </div>
+    </section>

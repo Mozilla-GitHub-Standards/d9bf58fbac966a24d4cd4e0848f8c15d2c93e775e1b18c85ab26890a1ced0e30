@@ -1,0 +1,13 @@
+{% if blog_posts|length > 0 %}
+      <div class="posts" id="posts">
+          <div class="clearfix">
+            {% for post in blog_posts %}
+                <div class="col-sm-10 col-sm-offset-1  col-md-8 col-md-offset-2 post news">
+                    <h3><a href="{{post.permalink}}">{{post.title}}</a></h3>
+                    {% if post.post_type == "post" %}<time>{{post.date|date("F j, Y")}}</time>{% endif %}
+                    <p>{{post.get_preview(40)}} </p>
+                </div>
+            {% endfor %}
+          </div>
+      </div>
+{% endif %}

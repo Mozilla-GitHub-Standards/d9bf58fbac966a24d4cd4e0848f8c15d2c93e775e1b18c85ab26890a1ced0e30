@@ -1,0 +1,21 @@
+{% if post.post_type == "post" %}
+
+{% set prev_text = "Previous" %}
+{% set next_text = "Next" %}
+    <div class="row prev-next">
+        <div class="col-sm-10 col-sm-offset-1  col-md-8 col-md-offset-2">
+          <div class="row">
+            <div class="prev col-xs-6">
+                {% if post.prev %}
+                    <a href="{{post.prev.permalink}}" class="btn btn-primary btn-prev {{post.prev.permalink|length ? '' : 'invisible'}}">&larr; {{ prev_text }} </a>
+                {% endif %}
+            </div>
+            <div class="next col-xs-6">
+                {% if post.next %}
+                    <a href="{{post.next.permalink}}"  class="btn btn-primary btn-next {{post.next.permalink|length ? '' : 'invisible'}}">{{ next_text }} &rarr;</a>
+                {% endif %}
+            </div>
+          </div>
+        </div>
+    </div>
+{% endif %}
