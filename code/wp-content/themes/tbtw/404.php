@@ -2,8 +2,7 @@
     // PATH: *
 
     $data = Timber::get_context();
-    $post = new TimberPost( 1744 ); // Set this to the 404 pages ID
-    $data['post'] = $post;
+    $data['post'] = Timber::get_post( get_option('page_on_front') );
 
     Timber::render('404.twig', $data);
 ?>
